@@ -56,6 +56,6 @@ for p in np.arange(0.0, 1.0, 0.001):
     fig.add_axes(ax)
     plt.set_cmap('jet')
     im = ax.imshow(np.array(mat).T, aspect='equal')
-    im.set_clim(0.0,2.0)
+    im.set_clim(0.0,np.exp(1.0))
     plt.savefig('img_{:04d}.png'.format(n), dpi=300)
     plt.show()
