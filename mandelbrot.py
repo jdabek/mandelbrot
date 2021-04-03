@@ -28,17 +28,18 @@ def getMandelbrot(scaler,rotation,xcent,ycent):
             a = xcent + a1*np.cos(2.0*np.pi*rotation) - b1*np.sin(2.0*np.pi*rotation)
             b = -ycent + a1*np.sin(2.0*np.pi*rotation) + b1*np.cos(2.0*np.pi*rotation)
             z = [0., 0.]
-            zz = [a,b]
+            zz = 0.0
             for n in range(0,40):
                 z = complexSquare(z)
                 z[0] += a
                 z[1] += b
                 zz = np.sqrt(z[0]**2+z[1]**2)
                 if zz > 2.0:
-                    zz = np.log(zz)
                     break
             if zz < 1.0:
                 zz = 0.0
+            else:
+                zz = np.log(zz)
             vec.append(zz)
         mat.append(vec)
     return [mat,x,y]
