@@ -45,7 +45,7 @@ def getMandelbrot(scaler,rotation,xcent,ycent):
     return [mat,x,y]
 
 n = 0
-for p in np.arange(0.0, 1.0, 0.001):
+for p in np.arange(0.0, 1.0, 0.002):
     n += 1
     weight = 1.0-np.cos(np.pi*p/0.99)**4
     [mat,x,y] = getMandelbrot(1.0e-6+np.abs(1.0-2.0*p)**3,2.0*p,-1.2390001*weight,0.41830152*weight)
